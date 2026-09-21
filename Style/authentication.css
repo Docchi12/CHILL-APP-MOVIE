@@ -159,7 +159,7 @@ form {
 /* responsive to dektop */
 @media (min-width: 768px) {
   main {
-    padding: 40px;
+    padding: 20px 40px;
   }
 
   .logo {
