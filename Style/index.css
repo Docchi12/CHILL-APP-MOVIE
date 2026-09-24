@@ -1,4 +1,5 @@
 @import url("./global.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Londrina+Solid:wght@100;300;400;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   background-color: rgba(24, 26, 28, 1);
@@ -45,6 +46,16 @@ nav {
   text-decoration: underline;
 }
 
+.profile-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.logo-text {
+  display: none;
+}
+
 .avatar-dropdown {
   width: 113px;
   background-color: rgba(24, 26, 28, 1);
@@ -86,6 +97,45 @@ nav {
   text-decoration: underline;
 }
 
+/* responsive desktop header */
+@media (min-width: 768px) {
+  nav {
+    margin: 25px 80px;
+  }
+
+  .logo-text {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: "Londrina Solid", sans-serif;
+    margin-left: 7px;
+    color: white;
+  }
+
+  .nav-links {
+    gap: 80px;
+    padding: 10px 0px;
+  }
+
+  .nav-links img {
+    width: 30px;
+    height: 26px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .profile-toggle img {
+    width: 76px;
+    height: 40px;
+  }
+
+  .avatar-dropdown {
+    display: none;
+  }
+}
+
 /* < main > */
 main {
   min-width: 360px;
@@ -115,16 +165,19 @@ main {
 
 .detail-movie {
   max-width: 668px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.movie-header h1 {
+.detail-movie h1 {
   font-size: 24px;
   font-weight: 700;
   line-height: 120%;
   color: white;
 }
 
-.movie-header p {
+.detail-movie p {
   font-size: 12px;
   font-weight: 500;
   line-height: 140%;
@@ -145,7 +198,7 @@ main {
 
 .information-movie {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .btn-start {
@@ -155,7 +208,7 @@ main {
   letter-spacing: 0.2px;
   color: white;
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 48px;
   border: none;
   background-color: rgba(24, 26, 28, 1);
   cursor: pointer;
@@ -177,11 +230,10 @@ main {
   letter-spacing: 0.2px;
   color: white;
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 48px;
   border: none;
   background-color: rgba(24, 26, 28, 1);
   cursor: pointer;
-
   display: flex;
   align-items: center;
   gap: 4px;
@@ -263,10 +315,18 @@ main {
   color: white;
 }
 
-.information-rating img  {
+.information-rating img {
   width: 10px;
   height: 10px;
   margin-right: 5px;
+}
+
+.slide-movies {
+  position: relative;
+}
+
+.arrow {
+  display: none;
 }
 
 .container-card {
@@ -348,6 +408,177 @@ main {
   text-align: center;
 }
 
+/* responsive desktop main */
+@media (min-width: 768px) {
+  main {
+    gap: 0px;
+  }
+
+  .movie-header {
+    gap: 40px;
+    margin: 274px 80px 80px 80px;
+  }
+
+  .detail-movie {
+    gap: 20px;
+  }
+
+  .detail-movie h1 {
+    font-size: 48px;
+  }
+
+  .detail-movie p {
+    font-size: 18px;
+    display: block;
+  }
+
+  .btn-start,
+  .btn-information {
+    font-size: 16px;
+    padding: 10px 26px;
+    gap: 8px;
+  }
+
+  .btn-information img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .age {
+    width: 52px;
+    height: 45px;
+  }
+
+  .btn-volume-off img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .continue-watching {
+    margin: 0px;
+    padding: 40px 80px;
+    gap: 32px;
+  }
+
+  .continue-watching h1,
+  .container-card h1 {
+    font-size: 32px;
+  }
+
+  .continue-card-movies {
+    gap: 24px;
+  }
+
+  .continue-card-movies img {
+    width: 302px;
+    height: 162px;
+  }
+
+  .information-rating {
+    width: 302px;
+    height: 54px;
+    top: 108px;
+  }
+
+  .information-rating img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .information-rating p {
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+
+  .information-rating span {
+    font-size: 14px;
+  }
+
+  .slide-movies {
+    width: 1280px;
+  }
+
+  .arrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+
+    position: absolute;
+    z-index: 10;
+  }
+
+  .move-right {
+    right: -25px;
+    top: 60px;
+  }
+
+  .move-left {
+    left: -25px;
+    top: 60px;
+  }
+
+  .container-card {
+    margin: 0px;
+    padding: 40px 80px;
+    gap: 32px;
+  }
+
+  .cards {
+    gap: 28px;
+  }
+
+  .cards img {
+    width: 234px;
+    height: 365px;
+    border-radius: 8px;
+  }
+
+  .label-new-episode {
+    width: 104px;
+    height: 28px;
+    border-radius: 24px;
+    padding: 4px 10px;
+
+    top: 16px;
+    left: 16px;
+  }
+
+  .label-new-episode p {
+    font-size: 13px;
+    letter-spacing: 0.2px;
+  }
+
+  .label-top-rate {
+    width: 31px;
+    height: 48px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 4px;
+
+    top: 7px;
+    right: 12px;
+  }
+
+  .label-top-rate p {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+  }
+
+  .slide-right {
+    right: -25px;
+    top: 161px;
+  }
+
+  .slide-left {
+    left: -25px;
+    top: 161px;
+  }
+}
+
+/* footer */
 footer {
   min-width: 360px;
   border-top: 1px solid rgba(231, 227, 252, 0.23);
@@ -384,18 +615,85 @@ footer {
   gap: 8px;
 }
 
-.nav-link {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.links-group a {
+.footer-section summary {
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
   letter-spacing: 0.2px;
   color: rgba(255, 255, 255, 1);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-section:open summary img {
+  transform: rotate(90deg);
+}
+
+.footer-section ul {
+  list-style: none;
+  margin-top: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.footer-section a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  color: rgba(193, 194, 196, 1);
   text-decoration: none;
 }
 
+.footer-section a:hover {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 1);
+}
+
+.genre-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+}
+
+/* responsive desktop footer */
+@media (min-width: 768px) {
+  footer {
+    margin-top: 80px;
+    padding: 60px 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    gap: 26px;
+  }
+
+  .brand img {
+    width: 163px;
+    height: 44px;
+  }
+
+  .brand p {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+  }
+
+  .links-group {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+  }
+
+  .footer-section summary img{
+    display: none;
+  }
+}
